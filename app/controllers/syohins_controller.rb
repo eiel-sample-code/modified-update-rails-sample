@@ -40,11 +40,8 @@ class SyohinsController < ApplicationController
   # PATCH/PUT /syohins/1
   # PATCH/PUT /syohins/1.json
   def update
-    @syohin.assign_attributes(syohin_params)
-    @syohin.kingaku = @syohin.kingaku.round(-1)
-    @syohin.record_datetime += 1.day
     respond_to do |format|
-      if @syohin.save
+      if @syohin.update(syohin_params)
         format.html { redirect_to @syohin, notice: 'Syohin was successfully updated.' }
         format.json { render :show, status: :ok, location: @syohin }
       else
