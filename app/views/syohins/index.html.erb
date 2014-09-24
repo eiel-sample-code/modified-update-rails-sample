@@ -1,0 +1,27 @@
+<h1>Listing syohins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kingaku</th>
+      <th>Record datetime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @syohins.each do |syohin| %>
+      <tr>
+        <td><%= syohin.kingaku %></td>
+        <td><%= syohin.record_datetime %></td>
+        <td><%= link_to 'Show', syohin %></td>
+        <td><%= link_to 'Edit', edit_syohin_path(syohin) %></td>
+        <td><%= link_to 'Destroy', syohin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Syohin', new_syohin_path %>

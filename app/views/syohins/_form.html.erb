@@ -1,0 +1,25 @@
+<%= form_for(@syohin) do |f| %>
+  <% if @syohin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@syohin.errors.count, "error") %> prohibited this syohin from being saved:</h2>
+
+      <ul>
+      <% @syohin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kingaku %><br>
+    <%= f.number_field :kingaku %>
+  </div>
+  <div class="field">
+    <%= f.label :record_datetime %><br>
+    <%= f.datetime_select :record_datetime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kingaku:</strong>
+  <%= @syohin.kingaku %>
+</p>
+
+<p>
+  <strong>Record datetime:</strong>
+  <%= @syohin.record_datetime %>
+</p>
+
+<%= link_to 'Edit', edit_syohin_path(@syohin) %> |
+<%= link_to 'Back', syohins_path %>

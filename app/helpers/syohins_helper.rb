@@ -1,0 +1,2 @@
+module SyohinsHelper
+end
